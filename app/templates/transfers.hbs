@@ -2,32 +2,6 @@
 
 <main>
   <div class="table-wrapper">
-    <table aria-labelledby="transfers-heading">
-      <thead>
-        <tr>
-          <th>Status</th>
-          <th>Progress</th>
-          <th>User</th>
-          <th>Request Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each @model.transfers as |transfer|}}
-          <tr>
-            <td aria-describedby="nice-description-{{transfer.id}}">
-              <StatusDetail @transfer={{transfer}} />
-            </td>
-            <td>{{byte-notation transfer.processed}}/{{byte-notation transfer.total}}</td>
-            <td><a href="mailto:{{transfer.email}}">{{transfer.displayName}}</a></td>
-            <td>{{moment-format transfer.requestDate "MM/DD/YYYY hh:mm A"}}</td>
-          </tr>
-          <tr aria-hidden="true" id="nice-description-{{transfer.id}}">
-            <td colspan="4">
-              {{transfer.status}}
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
+    <TransfersTable @transfers={{@model.transfers}} aria-labelledby="transfers-heading" />
   </div>
 </main>
