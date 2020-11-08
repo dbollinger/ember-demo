@@ -12,6 +12,7 @@ body {
 table {
   width: auto;
   background: white;
+  border-collapse: collapse;
 }
 
 table thead tr th {
@@ -24,4 +25,12 @@ table tbody tr td {
   text-align: left;
   white-space: nowrap;
   padding: 0.25rem 0.5rem;
+}
+
+table tbody tr:nth-child(4n + 1) {
+  background: #f2f2f2;
+}
+
+table tbody tr:nth-child(4n + 2) {
+  background: #f2f2f2;
 }

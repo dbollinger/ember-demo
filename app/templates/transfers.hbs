@@ -12,28 +12,19 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td aria-describedby="nice-description-1">Halted</td>
-          <td>1b / 1b</td>
-          <td><a href="mailto:dhbollinger@gmail.com">Howie Bollinger</a></td>
-          <td>{{moment-format "10/10/2020" "MM/DD/YYYY hh:mm A"}}</td>
-        </tr>
-        <tr aria-hidden="true" id="nice-description-1">
-          <td colspan="4">
-            Extended description for the first row
-          </td>
-        </tr>
-        <tr>
-          <td aria-describedby="nice-description-2">Halted</td>
-          <td>1b / 1b</td>
-          <td><a href="mailto:dhbollinger@gmail.com">Howie Bollinger</a></td>
-          <td>{{moment-format "10/10/2020" "MM/DD/YYYY hh:mm A"}}</td>
-        </tr>
-        <tr aria-hidden="true" id="nice-description-2">
-          <td colspan="4">
-            Extended description for the second row
-          </td>
-        </tr>
+        {{#each @model.transfers as |transfer|}}
+          <tr>
+            <td aria-describedby="nice-description-{{transfer.id}}">{{transfer.statusType}}</td>
+            <td>{{transfer.processed}}b / {{transfer.total}}b</td>
+            <td><a href="mailto:{{transfer.email}}">{{transfer.displayName}}</a></td>
+            <td>{{moment-format transfer.requestDate "MM/DD/YYYY hh:mm A"}}</td>
+          </tr>
+          <tr aria-hidden="true" id="nice-description-{{transfer.id}}">
+            <td colspan="4">
+              {{transfer.status}}
+            </td>
+          </tr>
+        {{/each}}
       </tbody>
     </table>
   </div>
