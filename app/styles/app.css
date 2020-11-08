@@ -1,0 +1,27 @@
+body {
+  background: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-y: auto;
+}
+
+table {
+  width: auto;
+  background: white;
+}
+
+table thead tr th {
+  text-align: left;
+  white-space: nowrap;
+  padding: 0.25rem 0.5rem;
+}
+
+table tbody tr td {
+  text-align: left;
+  white-space: nowrap;
+  padding: 0.25rem 0.5rem;
+}
