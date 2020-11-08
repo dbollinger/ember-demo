@@ -55,7 +55,7 @@ export default Factory.extend({
       return null;
     },
     remaining() {
-      return faker.random.number({ min: 0, max: 1000000 });
+      return faker.random.number({ min: 0, max: 500000000 });
     },
     processed() {
       return faker.random.number({ min: 1, max: this.total - 1 });
