@@ -1,7 +1,6 @@
 # status-tracker
 
 This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
 
 ## Prerequisites
 
@@ -20,7 +19,21 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
+There are two ways to run the application during development.  Use the Mirage development server for rapid development or to test API changes that may not yet be finalized.  Alternatively, you may proxy the ember server to the Express server back-end for a more integrated development experience.
+
+### Mirage server
+
+The mirage server creates a front end focused environment with support for acceptance tests, allowing contributors to develop without running their code against a "real" server.
+
 * `ember serve`
+* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+
+### Express server
+
+The ember server can also be proxied to a live server, including the provided express server, which by default runs on port 3000.
+
+* Start the ember application server and proxy it to whatever port your server is running on: `ember serve --proxy="http://localhost:3000"`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
@@ -28,12 +41,14 @@ You will need the following things properly installed on your computer.
 
 Make use of the many generators for code, try `ember help generate` for more details
 
-### Running Tests
+## Tests
+
+## Running Tests
 
 * `ember test`
 * `ember test --server`
 
-### Linting
+## Linting
 
 * `npm run lint:hbs`
 * `npm run lint:js`
@@ -43,10 +58,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
