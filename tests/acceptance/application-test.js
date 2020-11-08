@@ -10,7 +10,7 @@ module('Acceptance | application', function (hooks) {
     await visit('/');
 
     assert.equal(currentURL(), '/');
-    assert.dom('h1').hasText('The Application');
+    assert.dom('h1').hasText('Status Tracker');
 
     await a11yAudit();
     assert.ok(true, 'no a11y errors found!');
