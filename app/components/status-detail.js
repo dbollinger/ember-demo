@@ -30,6 +30,8 @@ export default class StatusDetailComponent extends Component {
       return DateTime.fromJSDate(this.args.transfer.endDate).toFormat('dd/mm/yyyy hh:mm a');
     } else if (this.args.transfer.remaining) {
       return this.remainingDisplayText;
+    } else {
+      return null;
     }
   }
 }
