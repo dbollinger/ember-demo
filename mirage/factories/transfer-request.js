@@ -42,6 +42,10 @@ export default Factory.extend({
     endDate() {
       return null;
     },
+    requestDate() {
+      let daysAgo = faker.random.number({ min: 0, max: 3 });
+      return faker.date.recent(daysAgo);
+    },
     remaining() {
       return 0;
     },
@@ -63,11 +67,20 @@ export default Factory.extend({
   }),
 
   error: trait({
+    requestDate() {
+      let daysAgo = faker.random.number({ min: 6, max: 15 });
+      return faker.date.recent(daysAgo);
+    },
+    startDate() {
+      let daysAgo = faker.random.number({ min: 2, max: 5 });
+      return faker.date.recent(daysAgo);
+    },
     endDate() {
-      return new Date();
+      let daysAgo = faker.random.number({ min: 0, max: 1 });
+      return faker.date.recent(daysAgo);
     },
     remaining() {
-      return 0;
+      return null;
     },
     processed() {
       return faker.random.number({ min: 1, max: this.total - 1 });
@@ -75,11 +88,20 @@ export default Factory.extend({
   }),
 
   success: trait({
+    requestDate() {
+      let daysAgo = faker.random.number({ min: 6, max: 15 });
+      return faker.date.recent(daysAgo);
+    },
+    startDate() {
+      let daysAgo = faker.random.number({ min: 2, max: 5 });
+      return faker.date.recent(daysAgo);
+    },
     endDate() {
-      return new Date();
+      let daysAgo = faker.random.number({ min: 0, max: 1 });
+      return faker.date.recent(daysAgo);
     },
     remaining() {
-      return 0;
+      return null;
     },
     processed() {
       return this.total;

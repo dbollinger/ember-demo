@@ -33,6 +33,10 @@ export default class TransferRequestModel extends Model {
     }
   }
 
+  get isInactive() {
+    return this.statusType === STATUS_TYPES.INACTIVE;
+  }
+
   get displayName() {
     return this.fullname || this.username || this.email || 'Missing Info';
   }
