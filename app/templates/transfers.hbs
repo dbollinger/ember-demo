@@ -15,7 +15,7 @@
         {{#each @model.transfers as |transfer|}}
           <tr>
             <td aria-describedby="nice-description-{{transfer.id}}">{{transfer.statusType}}</td>
-            <td>{{transfer.processed}}b / {{transfer.total}}b</td>
+            <td>{{byte-notation transfer.processed}}/{{byte-notation transfer.total}}</td>
             <td><a href="mailto:{{transfer.email}}">{{transfer.displayName}}</a></td>
             <td>{{moment-format transfer.requestDate "MM/DD/YYYY hh:mm A"}}</td>
           </tr>
