@@ -17,8 +17,8 @@ export default class StatusDetailComponent extends Component {
   }
 
   get remainingDisplayText() {
-    let duration = Duration.fromMillis(this.args.transfer.remaining);
     let format = this.args.transfer.remaining < TWO_DAYS ? 'hh:mm:ss' : `d 'days'`;
+    let duration = Duration.fromMillis(this.args.transfer.remaining);
     return duration.toFormat(format);
   }
 
