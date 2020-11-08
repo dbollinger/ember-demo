@@ -18,16 +18,13 @@ export default class StatusDetailComponent extends Component {
 
   get remainingDisplayText() {
     let duration = Duration.fromMillis(this.args.transfer.remaining);
-    if (this.args.transfer.remaining < TWO_DAYS) {
-      return duration.toFormat('hh:mm:ss');
-    } else {
-      return `${duration.toFormat('d')} days`;
-    }
+    let format = this.args.transfer.remaining < TWO_DAYS ? 'hh:mm:ss' : `d 'days'`;
+    return duration.toFormat(format);
   }
 
   get timestamp() {
     if (this.args.transfer.endDate) {
-      return DateTime.fromJSDate(this.args.transfer.endDate).toFormat('dd/mm/yyyy hh:mm a');
+      return DateTime.fromJSDate(this.args.transfer.endDate).toFormat('MM/dd/yyyy hh:mm a');
     } else if (this.args.transfer.remaining) {
       return this.remainingDisplayText;
     } else {

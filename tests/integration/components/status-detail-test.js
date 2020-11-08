@@ -18,7 +18,7 @@ module('Integration | Component | status-detail', function (hooks) {
   });
 
   test('it renders "Completed: <end_date>" for SUCCESS status', async function (assert) {
-    let endDate = new Date('10-10-2020');
+    let endDate = new Date('10-15-2020');
 
     this.transfer = {
       statusType: STATUS_TYPES.SUCCESS,
@@ -27,11 +27,11 @@ module('Integration | Component | status-detail', function (hooks) {
 
     await render(hbs`<StatusDetail @transfer={{this.transfer}} />`);
 
-    assert.equal(this.element.textContent.trim(), `Completed: 10/10/2020 12:00 AM`);
+    assert.equal(this.element.textContent.trim(), `Completed: 10/15/2020 12:00 AM`);
   });
 
   test('it renders "Halted: <end_date>" for ERROR status', async function (assert) {
-    let endDate = new Date('10-10-2020');
+    let endDate = new Date('10-15-2020');
 
     this.transfer = {
       statusType: STATUS_TYPES.ERROR,
@@ -40,7 +40,7 @@ module('Integration | Component | status-detail', function (hooks) {
 
     await render(hbs`<StatusDetail @transfer={{this.transfer}} />`);
 
-    assert.equal(this.element.textContent.trim(), `Halted: 10/10/2020 12:00 AM`);
+    assert.equal(this.element.textContent.trim(), `Halted: 10/15/2020 12:00 AM`);
   });
 
   test('it renders "Time Remaining: <hh:mm:ss>" for IN_PROGRESS status when remaining time is less than two days', async function (assert) {
