@@ -1,0 +1,38 @@
+<h2 id="transfers-heading">Transfers Report</h2>
+
+<main>
+  <table aria-labelledby="transfers-heading">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Progress</th>
+        <th>User</th>
+        <th>Request Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td aria-describedby="nice-description-1">Halted</td>
+        <td>1b / 1b</td>
+        <td><a href="mailto:dhbollinger@gmail.com">Howie Bollinger</a></td>
+        <td>{{moment-format "10/10/2020" "MM/DD/YYYY hh:mm A"}}</td>
+      </tr>
+      <tr aria-hidden="true" id="nice-description-1">
+        <td colspan="4">
+          Extended description for the first row
+        </td>
+      </tr>
+      <tr>
+        <td aria-describedby="nice-description-2">Halted</td>
+        <td>1b / 1b</td>
+        <td><a href="mailto:dhbollinger@gmail.com">Howie Bollinger</a></td>
+        <td>{{moment-format "10/10/2020" "MM/DD/YYYY hh:mm A"}}</td>
+      </tr>
+      <tr aria-hidden="true" id="nice-description-2">
+        <td colspan="4">
+          Extended description for the second row
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
