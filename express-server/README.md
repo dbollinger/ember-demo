@@ -1,3 +1,14 @@
 # Testing Instructions for Reviewers
 
-This text should be replaced with a basic set of instructions to run your code for testing purposes.
+## Start the express server
+
+- From the express-server directory of this project, run `node app.js`
+
+## Start the ember server
+
+- From the root direcotry of this project, run `ember server --proxy="http://localhost:3000`
+
+## Visit the page
+
+- Visit `http://localhost:4200` to view the page
+- Navigate between test cases using the select menu
