@@ -25,7 +25,7 @@ export default class StatusDetailComponent extends Component {
   get timestamp() {
     if (this.args.transfer.endDate) {
       return DateTime.fromJSDate(this.args.transfer.endDate).toFormat('MM/dd/yyyy hh:mm a');
-    } else if (this.args.transfer.remaining) {
+    } else if (this.args.transfer.statusType === STATUS_TYPES.IN_PROGRESS) {
       return this.remainingDisplayText;
     } else {
       return null;
