@@ -10,5 +10,5 @@
 
 ## Visit the page
 
-- Visit `http://localhost:4200` to view the page
+- Visit `http://localhost:4200/transfers` to view the page
 - Navigate between test cases using the select menu
