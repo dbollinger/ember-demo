@@ -29,7 +29,7 @@ I would recommend some type of BDD test that hits a production or pre-production
 
 ### Additional unit, integration, and acceptance tests
 
-I was not able to add tests for all functionality.  Some areas I would increase coverage include sorting behavior, as well as adapter and serializer configurations.  Most of the adapter and serializer configuration is implicitly tested through the acceptance test that runs the application against a mirage server, but the configuration that supports the express-server backend remains untested.
+I was not able to add tests for all functionality due to time constraints.  Some areas I would increase coverage include sorting behavior, as well as adapter and serializer configurations.  Most of the adapter and serializer configuration is implicitly tested through the acceptance test that runs the application against a mirage server, but the configuration that supports the express-server backend remains untested.
 
 # Implementation Choices
 
