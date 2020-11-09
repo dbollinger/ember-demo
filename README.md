@@ -26,7 +26,7 @@ There are two ways to run the application during development.  Use the Mirage de
 The mirage server creates a front end focused environment with support for acceptance tests, allowing contributors to develop without running their code against a "real" server.
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200/transfers).
+* Visit your app at [http://localhost:4200/transfers](http://localhost:4200/transfers).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
 ### Express server
@@ -34,7 +34,9 @@ The mirage server creates a front end focused environment with support for accep
 The ember server can also be proxied to a live server, including the provided express server, which by default runs on port 3000.
 
 * Start the ember application server and proxy it to whatever port your server is running on: `ember serve --proxy="http://localhost:3000"`
-* Visit your app at [http://localhost:4200/transfers](http://localhost:4200).
+* Visit your app at [http://localhost:4200/transfers](http://localhost:4200/transfers).
+
+See the [express-server readme](https://github.com/dbollinger/ember-demo/blob/master/express-server/README.md) for more details.
 
 ### Code Generators
 
