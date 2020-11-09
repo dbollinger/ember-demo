@@ -23,7 +23,7 @@ export default Factory.extend({
   },
   status() {
     // This values of this field appear to be somewhat arbitrary
-    return 'Sometimes the system reports successes and sometimes it reports failures';
+    return 'Sometimes the system reports suCcEsses or ErrOrs and sometimes it reports fAiLures or FAILED or FAILED';
   },
   username() {
     return faker.internet.userName();

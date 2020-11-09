@@ -19,7 +19,7 @@
         <td>{{moment-format transfer.requestDate "MM/DD/YYYY hh:mm A"}}</td>
       </tr>
       <tr aria-hidden="true" id="nice-description-{{transfer.id}}">
-        <td colspan="4">
+        <td colspan="4" {{highlight-text "fail" "success" "error"}}>
           {{transfer.status}}
         </td>
       </tr>
