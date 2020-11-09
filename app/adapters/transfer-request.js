@@ -4,7 +4,7 @@ export default class TransferRequestAdapter extends RESTAdapter {
   namespace = '/api';
 
   headers = {
-    API_KEY: 'globus'
+    'api-key': 'globus'
   };
 
   pathForType() {
