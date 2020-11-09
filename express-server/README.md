@@ -39,6 +39,8 @@ When presented with an API that requires interpreting enumerable values based on
 
 This is still somewhat brittle, as the API could change and break these computed properties, but the benefit stands that the issue is somewhat isolated from rest of the application, particularly in the presentation and templating layer.
 
+Using ember-data is also a relatively big commitment in terms of project size and onboarding.  It may be overkill for an application that only needs a single model, but I appreciate how robust the ecosystem is.  The fact that it can effectively support two different back-ends (the mirage server and the express server) with just    a few conditionals in the adapter layer is very convenient, and draws a distinct line between the front end application and the back end server implementation.
+
 ### Using aria attributes to accomodate unconventional table layout
 
 "Sub-rows" as presented in the design requirement are somewhat unconventional HTML, and create interaction challenges for assistive technology.  If presented with this requirement in a real world setting, I might work with the product owner and designer in an effort to consider other ways to present the data.
