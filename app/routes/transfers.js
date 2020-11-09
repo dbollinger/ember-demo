@@ -3,9 +3,13 @@ import { task } from 'ember-concurrency';
 
 export default class TransfersRoute extends Route {
   model() {
-    let loadTransfersTask = this.loadTransfers.perform();
+    this.loadTransfers.perform().catch((e) => {
+      // Very basic error handling for failed attempts to request from the API
+      console.log(e);
+    });
+
     return {
-      loadTransfersTask
+      loadTransfers: this.loadTransfers
     };
   }
 
