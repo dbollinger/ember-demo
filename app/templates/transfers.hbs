@@ -1,7 +1,18 @@
 <h2 id="transfers-heading">Transfers Report</h2>
 
-<main>
+<main aria-busy={{@model.loadTransfersTask.value}}>
+
   <div class="table-wrapper">
-    <TransfersTable @transfers={{@model.transfers}} aria-labelledby="transfers-heading" />
+    {{#if @model.loadTransfersTask.isError}}
+      <div>
+        Something went wrong, failed to load data.
+      </div>
+    {{else if @model.loadTransfersTask.value}}
+      <TransfersTable @transfers={{@model.loadTransfersTask.value}} aria-labelledby="transfers-heading" />
+    {{else}}
+      <div>
+        loading...
+      </div>
+    {{/if}}
   </div>
 </main>

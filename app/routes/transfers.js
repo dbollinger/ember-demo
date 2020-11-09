@@ -1,11 +1,16 @@
 import Route from '@ember/routing/route';
+import { task } from 'ember-concurrency';
 
 export default class TransfersRoute extends Route {
   model() {
-    let transfers = this.store.query('transfer-request', {});
-
+    let loadTransfersTask = this.loadTransfers.perform();
     return {
-      transfers
+      loadTransfersTask
     };
   }
+
+  @task(function* (options = {}) {
+    return yield this.store.query('transfer-request', options);
+  })
+  loadTransfers;
 }
