@@ -19,7 +19,9 @@
       </tr>
       <tr aria-hidden="true" id="nice-description-{{transfer.id}}">
         <td colspan="4" {{highlight-text "fail" "success" "error"}}>
-          {{transfer.status}}
+          <span class="nice-description-text">
+            {{transfer.status}}
+          </span>
         </td>
       </tr>
     {{/each}}
