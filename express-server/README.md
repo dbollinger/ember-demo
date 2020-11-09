@@ -2,11 +2,11 @@
 
 ### Start the express server
 
-- From the express-server directory of this project, run `node app.js`
+- From the express-server directory of this project, run `npm install && node app.js`
 
 ### Start the ember server
 
-- From the root directory of this project, run `ember server --proxy="http://localhost:3000`
+- From the root directory of this project, run `npm install && ember server --proxy="http://localhost:3000`
 
 ### Visit the page
 
