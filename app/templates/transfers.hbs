@@ -2,6 +2,16 @@
 
 <main>
   <div class="table-wrapper">
-    <TransfersTable @transfers={{@model.transfers}} aria-labelledby="transfers-heading" />
+    {{#if @model.loadTransfers.last.isError}}
+      <div>
+        Something went wrong, failed to load data.
+      </div>
+    {{else if @model.loadTransfers.lastSuccessful.value}}
+      <TransfersTable @transfers={{@model.loadTransfers.lastSuccessful.value}} aria-labelledby="transfers-heading" />
+    {{else if @model.loadTransfers.isRunning}}
+      <div>
+        loading...
+      </div>
+    {{/if}}
   </div>
 </main>

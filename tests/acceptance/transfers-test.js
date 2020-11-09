@@ -25,4 +25,25 @@ module('Acceptance | transfers', function (hooks) {
     await a11yAudit();
     assert.ok(true, 'no a11y errors found!');
   });
+
+  test('visiting /transfers handles bad API responses', async function (assert) {
+    server.get('/transfer-requests', function () {
+      return {};
+    });
+
+    server.createList('transfer-request', 5, 'success');
+    server.createList('transfer-request', 5, 'error');
+    server.createList('transfer-request', 5, 'inactive');
+    server.createList('transfer-request', 5, 'inProgress');
+
+    await visit('/transfers');
+
+    assert.equal(currentURL(), '/transfers');
+
+    assert.dom('h2').hasText('Transfers Report');
+    assert.dom('.table-wrapper').hasText('Something went wrong, failed to load data.');
+
+    await a11yAudit();
+    assert.ok(true, 'no a11y errors found!');
+  });
 });
