@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { sort } from '@ember/object/computed';
 import { set } from '@ember/object';
 
-class SortedTransfers {
+export class SortedTransfers {
   constructor(transfers) {
     set(this, 'transfers', transfers);
   }
