@@ -55,3 +55,7 @@ table tbody tr:nth-child(4n + 1) {
 table tbody tr:nth-child(4n + 2) {
   background: #f2f2f2;
 }
+
+.emphasize-status {
+  font-weight: bold;
+}
