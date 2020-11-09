@@ -17,9 +17,23 @@
 
 - From the root directory of this project, run `npm run test`
 
-## Choices explained
+# Testing Needs
 
-### Using ember-data models to isolate API Concerns
+### Timezones
+
+I would recommend testing that timezones work as expected, both from a technical and user perspective.  Is localization required, or should date times for an application like this be displayed in a universal format?
+
+### API Key
+
+I would recommend some type of BDD test that hits a production or pre-production environment to ensure that both the front end application and server have configured the API key properly.
+
+### Additional unit, integration, and acceptance tests
+
+I was not able to add tests for all functionality.  Some areas I would increase coverage include sorting behavior, as well as adapter and serializer configurations.  Most of the adapter and serializer configuration is implicitly tested through the acceptance test that runs the application against a mirage server, but the configuration that supports the express-server backend remains untested.
+
+# Implementation Choices
+
+### Using ember-data models to isolate certain API Concerns
 
 When presented with an API that requires interpreting enumerable values based on multiple fields, I try to move that interpretation as close to the data request as possible.  The most appropriate place tends to be either a serializer that processes the API response's payload, or in a model definition itself.  In this scenario, using getters in the model definition feels most appropriate, because we do want to preserve the original fields from the API response.
 
@@ -37,7 +51,7 @@ https://www.w3.org/WAI/tutorials/tables/#why-is-this-important
 
 ### Responsive styles
 
-It is often tempting to chase after complex solutions for responsive tables.  However, best practices really stress that the best way to display tabular data using standard tables.  With this in mind, I generally recommend the following approach for tabular data on smaller viewports:
+It is often tempting to chase after complex solutions for responsive tables.  However, best practices really stress that the best way to display tabular data is simply to use standard tables.  With this in mind, I generally recommend the following approach for tabular data on smaller viewports:
 
 1. Ensure the table's container is as wide as possible (i.e. 100% of its container)
 2. Ensure the table's container allows horizontal scrolling.
