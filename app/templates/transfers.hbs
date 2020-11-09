@@ -1,4 +1,14 @@
-<h2 id="transfers-heading">Transfers Report</h2>
+<div class="transfers-header">
+  <h2 id="transfers-heading">Transfers Report</h2>
+  {{#if this.isUsingProxy}}
+    <select aria-label="test option" {{on "change" (action this.changeTest)}}>
+      {{!-- A simple select to support changing between test cases --}}
+      {{#each (array "1" "2" "3" "4") as |testNumber|}}
+        <option selected={{eq this.testNumber testNumber}} value={{testNumber}}>Test {{testNumber}}</option>
+      {{/each}}
+    </select>
+  {{/if}}
+</div>
 
 <main>
   <div class="table-wrapper">
