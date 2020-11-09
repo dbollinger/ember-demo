@@ -37,6 +37,10 @@ export default class TransferRequestModel extends Model {
     return this.statusType === STATUS_TYPES.INACTIVE;
   }
 
+  get isInProgress() {
+    return this.statusType === STATUS_TYPES.IN_PROGRESS;
+  }
+
   get displayName() {
     return this.fullname || this.username || this.email || 'Missing Info';
   }
