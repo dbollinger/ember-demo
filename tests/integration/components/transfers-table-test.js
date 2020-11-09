@@ -149,7 +149,7 @@ module('Integration | Component | transfers-table', function (hooks) {
     this.testTransfers = TEST_DATA;
 
     await render(hbs`<TransfersTable @transfers={{this.testTransfers}}/>`);
-    assert.dom('table tbody tr').exists({ count: 24 }); // each item requires two rows because of the description
+    assert.dom('table tbody tr').exists({ count: 24 }); // each item requires two rows because of the nice description
 
     // TODO: Assert that the transfers are sorted and rendered in the expected order
 
