@@ -6,7 +6,7 @@
 
 ### Start the ember server
 
-- From the root direcotry of this project, run `ember server --proxy="http://localhost:3000`
+- From the root directory of this project, run `ember server --proxy="http://localhost:3000`
 
 ### Visit the page
 
