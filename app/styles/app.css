@@ -67,3 +67,15 @@ table tbody tr:nth-child(4n + 2) {
 .emphasize-status {
   font-weight: bold;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  table .nice-description-text {
+    display: inline-block;
+    width: 90vw;
+    white-space: normal;
+  }
+}
