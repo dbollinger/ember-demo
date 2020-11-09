@@ -15,7 +15,7 @@
         </td>
         <td>{{byte-notation transfer.processed}}/{{byte-notation transfer.total}}</td>
         <td><a href="mailto:{{transfer.email}}">{{transfer.displayName}}</a></td>
-        <td>{{transfer.requestDate}}</td>  {{!--  "MM/DD/YYYY hh:mm A --}}
+        <td>{{format-date transfer.requestDate "MM/dd/yyyy hh:mm a"}}</td>
       </tr>
       <tr aria-hidden="true" id="nice-description-{{transfer.id}}">
         <td colspan="4" {{highlight-text "fail" "success" "error"}}>
