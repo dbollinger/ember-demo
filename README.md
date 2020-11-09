@@ -35,7 +35,6 @@ The ember server can also be proxied to a live server, including the provided ex
 
 * Start the ember application server and proxy it to whatever port your server is running on: `ember serve --proxy="http://localhost:3000"`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
 ### Code Generators
 
@@ -80,7 +79,7 @@ This is still somewhat brittle, as the API could change and break these computed
 
 "Sub-rows" as presented in the design requirement are somewhat unconventional HTML, and create interaction challenges for assistive technology.  If presented with this requirement in a real world setting, I might work with the product owner and designer in an effort to consider other ways to present the data.
 
-However, this is a fairly simple layout, and some additional aria markup allows us to maintain the layout that is both valid HTML and provides meaningful association and reading order to assistive technology.
+However, this is a fairly simple layout, and some additional aria markup allows us to maintain a layout that is both valid HTML and provides meaningful association and reading order for people using assistive technology.
 
 Having said that, some users may still find challenges with this markup, as there are many ways that different assistive devices consume tabular data.
 
